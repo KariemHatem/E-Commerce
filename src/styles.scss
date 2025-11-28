@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+//Variables
+@use './styles/_variables.scss' as *;
+//Importing Tailwind Styles
+@use './styles/tailwind.scss';
+
+//Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+
+body {
+  font-family: $font-primary;
+}
+
+@layer utilities {
+  .text-main-color {
+    color: $main-color;
+  }
+  .bg-main-color {
+    background-color: $main-color;
+  }
+  button:hover {
+    background-color: $alt-color;
+  }
+  .duration-300 {
+    transition-duration: 300ms;
+  }
+}
+
+.btn-global {
+  @apply rounded-2xl px-[.625rem] py-[.3125rem] bg-main-color text-white duration-300;
+  &:hover {
+    background-color: $alt-color;
+  }
+}
+.btn-danger {
+  @apply rounded-2xl px-[.625rem] py-[.3125rem] bg-red-600 text-white duration-300;
+  &:hover {
+    background-color: rgb(211, 135, 135);
+  }
+}
+.input-global {
+  @apply border border-gray-300  text-sm rounded-lg focus:outline-none focus:border-gray-300  w-full px-3 py-2 placeholder:text-gray-600;
+}
+.input-search {
+  @apply border-green-500 border-2 text-sm rounded-lg focus:outline-none focus:border-green-300  w-full px-3 py-2 placeholder:text-gray-600;
+}
+.labels {
+  @apply block mb-2.5 text-sm font-medium;
+}
+.errors {
+  @apply text-red-600 font-bold text-[.75rem] mt-2;
+}

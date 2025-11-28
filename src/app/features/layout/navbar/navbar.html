@@ -1,0 +1,144 @@
+<nav class="bg-gray-100 w-full z-20 border-b border-gray-200">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <!-- Icon logo -->
+    <a class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img
+        src="assets/images/freshcart-logo.svg"
+        width="160"
+        height="31"
+        class="h-8 w-auto"
+        alt="Freshcart Logo"
+      />
+    </a>
+
+    <div class="flex min-[875px]:order-2 space-x-3 min-[875px]:space-x-0 rtl:space-x-reverse">
+      <!-- Social media Icons -->
+      <div class="social-box hidden min-[875px]:order-2 min-[875px]:flex items-center gap-3">
+        @if (isLogin){
+        <div class="social flex items-center justify-between text-gray-700">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        }
+
+        <!-- Language Selector -->
+        <app-lang-dropdown></app-lang-dropdown>
+        <!-- Buttons -->
+        <div class="btns flex items-center gap-1.5 text-sm">
+          @if(!isLogin){
+          <button routerLink="/login" type="button" class="btn-global">
+            {{ 'login' | translate }}
+          </button>
+          <button routerLink="/register" type="button" class="btn-global">
+            {{ 'signup' | translate }}
+          </button>
+          } @if(isLogin){
+          <button (click)="logOut()" type="button" class="btn-global">
+            {{ 'logout' | translate }}
+          </button>
+          }
+        </div>
+      </div>
+      <!-- Menu Button -->
+      <button
+        data-collapse-toggle="navbar-sticky"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg min-[875px]:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-sticky"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Navbar links -->
+    <div
+      class="items-center justify-between hidden w-full min-[875px]:flex min-[875px]:w-auto min-[875px]:order-1 text-center"
+      id="navbar-sticky"
+    >
+      @if(isLogin){
+      <ul
+        class="flex flex-col min-[875px]:p-0 mt-4 font-semibold border border-gray-100 rounded-lg min-[875px]:flex-row min-[875px]:mt-0 min-[875px]:border-0 min-[875px]:space-x-4 text-gray-500"
+      >
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="text-main-color"
+            class="block py-2 px-3 rounded-sm min-[875px]:p-0 ml-2"
+            >{{ 'Home' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/cart"
+            routerLinkActive="text-main-color"
+            class="block py-2 px-3 rounded-sm min-[875px]:p-0"
+            >{{ 'Cart' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/products"
+            routerLinkActive="text-main-color"
+            class="block py-2 px-3 rounded-sm min-[875px]:p-0"
+            >{{ 'Products' | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="categories"
+            routerLinkActive="text-main-color"
+            class="block py-2 px-3 rounded-sm min-[875px]:p-0"
+            >{{ 'Categories' | translate }}</a
+          >
+        </li>
+      </ul>
+      }
+
+      <!-- Spcial Box Menu-->
+      <div class="social-box flex flex-col-reverse min-[875px]:hidden items-center gap-3 border-t">
+        <div class="social flex justify-center gap-2 text-gray-700">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <!-- Language Selector -->
+        <app-lang-dropdown></app-lang-dropdown>
+        <!-- Buttons Menu-->
+        <div class="btns flex flex-col justify-center gap-1.5 text-sm my-4">
+          @if (!isLogin) {
+          <button routerLink="/login" type="button" class="btn-global">
+            {{ 'login' | translate }}
+          </button>
+          <button routerLink="/register" type="button" class="btn-global">
+            {{ 'signup' | translate }}
+          </button>
+          } @if(isLogin){
+          <button (click)="logOut()" type="button" class="btn-global">
+            {{ 'logout' | translate }}
+          </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,105 @@
+<div class="flex flex-col h-screen justify-center w-9/12 lg:w-5/12 mx-auto">
+  <app-custome-header
+    [customeHeading]="registerHeading"
+    [customeParagraph]="registerParagraph"
+  ></app-custome-header>
+  <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+    @if(errorMessage != '') {
+    <h4 class="text-center text-red-600 text-lg font-bold mb-2">! {{ errorMessage }}</h4>
+    }
+    <!-- Inputs -->
+    <div class="mb-5">
+      <label class="labels">{{ 'nameLabel' | translate }}</label>
+      <input
+        type="text"
+        name="name"
+        class="input-global"
+        placeholder="{{ 'namePlaceholder' | translate }}"
+        formControlName="name"
+      />
+      <!-- Errors -->
+      @if(registerForm.get("name")?.errors && (registerForm.get("name")?.touched ||
+      registerForm.get("name")?.dirty)){ @if(registerForm.get("name")?.getError("required")){
+      <p class="errors">{{ 'nameRequired' | translate }}</p>
+      } @else if (registerForm.get("name")?.getError('minlength')) {
+      <p class="errors">{{ 'nameMinLength' | translate }}</p>
+      } @else if (registerForm.get("name")?.getError('maxlength')) {
+      <p class="errors">{{ 'nameMaxLength' | translate }}</p>
+      }}
+    </div>
+    <div class="mb-5">
+      <label class="labels">{{ 'emailLabel' | translate }}</label>
+      <input
+        type="email"
+        name="email"
+        class="input-global"
+        placeholder="{{ 'emailPlaceholder' | translate }}"
+        formControlName="email"
+      />
+      @if(registerForm.get("email")?.errors && (registerForm.get("email")?.touched ||
+      registerForm.get("email")?.dirty)){ @if(registerForm.get("email")?.getError("required")){
+      <p class="errors">{{ 'emailRequired' | translate }}</p>
+      } @else if (registerForm.get("email")?.getError('email')) {
+      <p class="errors">{{ 'emailInvalid' | translate }}</p>
+      }}
+    </div>
+    <div class="mb-5">
+      <label class="labels">{{ 'passwordLabel' | translate }}</label>
+      <input
+        type="password"
+        name="password"
+        class="input-global"
+        placeholder="{{ 'passwordPlaceholder' | translate }}"
+        formControlName="password"
+      />
+      @if(registerForm.get("password")?.errors && (registerForm.get("password")?.touched ||
+      registerForm.get("password")?.dirty)){
+      @if(registerForm.get("password")?.getError("required")){
+      <p class="errors">{{ 'passwordRequired' | translate }}</p>
+      } @else if (registerForm.get("password")?.getError('pattern')) {
+      <p class="errors">
+        {{ 'passwordPattern' | translate }}
+      </p>
+      }}
+    </div>
+    <div class="mb-5">
+      <label class="labels">{{ 'confirmPasswordLabel' | translate }}</label>
+      <input
+        type="password"
+        name="confirmPassword"
+        class="input-global"
+        placeholder="{{ 'confirmPasswordPlaceholder' | translate }}"
+        formControlName="rePassword"
+      />
+      @if(registerForm.errors?.['mismatched'] && (registerForm.get("rePassword")?.touched ||
+      registerForm.get("rePassword")?.dirty)) {
+      <p class="errors">{{ 'confirmPasswordMismatch' | translate }}</p>
+      }
+    </div>
+    <div class="mb-5">
+      <label class="labels">{{ 'phoneLabel' | translate }}</label>
+      <input
+        type="tel"
+        name="phone"
+        class="input-global"
+        placeholder="{{ 'phonePlaceholder' | translate }}"
+        formControlName="phone"
+      />
+      @if (registerForm.get("phone")?.errors && (registerForm.get("phone")?.touched ||
+      registerForm.get("phone")?.dirty)) { @if (registerForm.get("phone")?.getError("required")) {
+      <p class="errors">{{ 'phoneRequired' | translate }}</p>
+      }@else if(registerForm.get("phone")?.getError("pattern")) {
+      <p class="errors">{{ 'phonePattern' | translate }}</p>
+      } }
+    </div>
+    <button
+      type="submit"
+      class="btn-global disabled:cursor-not-allowed disabled:opacity-50"
+      [disabled]="!registerForm.valid"
+    >
+      {{ 'registerButton' | translate }} @if(isLoading){
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      }
+    </button>
+  </form>
+</div>

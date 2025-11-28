@@ -1,0 +1,24 @@
+<div>
+  <div class="w-full h-40mb-4 overflow-hidden rounded-lg">
+    <img
+      [src]="cardProductInfo()?.category?.image"
+      class="w-full h-full object-cover"
+      alt="product"
+    />
+  </div>
+
+  <!-- Brand -->
+  <h5 class="text-main-color text-sm font-semibold my-2">
+    {{ cardProductInfo()?.category?.name }}
+  </h5>
+
+  <!-- Title -->
+  <p class="text-gray-800 text-sm font-semibold leading-tight line-clamp-2">
+    {{ cardProductInfo()?.title }}
+  </p>
+
+  <div class="flex items-center mt-2">
+    <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+    <span class="text-gray-500 text-xs ml-1">{{ cardProductInfo()?.ratingsAverage }}</span>
+  </div>
+</div>

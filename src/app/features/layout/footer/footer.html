@@ -1,0 +1,73 @@
+<footer class="bg-gray-100 p-5">
+  <!-- Start Content -->
+  <div class="head-content max-[768px]:text-center">
+    <h2 class="text-[1.125rem]">{{ 'footHeader' | translate }}</h2>
+    <p class="text-gray-500 font-light text-[.75rem] mt-1">
+      {{ 'footTitle' | translate }}
+    </p>
+  </div>
+  <!-- Form  -->
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="flex items-center justify-center mt-5 gap-3">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        #emailValidate="ngModel"
+        class="input-global max-[768px]:w-7/12"
+        placeholder="{{ 'emailPlaceholder' | translate }} ..."
+        required
+        email
+      />
+      <button
+        type="submit"
+        [disabled]="!myForm.valid"
+        class="text-white bg-main-color border rounded-lg focus:outline-none p-2 lg:w-2/12 text-sm md:w-3/12 duration-300 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        {{ 'shareApp' | translate }}
+      </button>
+    </div>
+    @if(emailValidate.invalid && (emailValidate.dirty || emailValidate.touched)) {
+    <p class="errors md:text-center lg:text-left md:ml-0 ml-4">
+      {{ 'emailInvalid' | translate }}
+    </p>
+    }
+  </form>
+  <div>
+    <!-- End Content -->
+    <div class="w-full h-[.0625rem] my-5 bg-gray-300"></div>
+    <div class="foot-content flex items-center justify-between min-[875px]:flex-row flex-col gap-4">
+      <div class="flex items-center justify-center gap-2">
+        <span>{{ 'payment' | translate }}</span>
+        <img src="assets/images/mastercard.webp" class="w-[2.5rem] h-auto" alt="mastercard" />
+
+        <img src="assets/images/paypal.png" class="w-[2.5rem] h-auto" alt="paypal" />
+
+        <img
+          src="assets/images/American-Express-Color.png"
+          class="w-[2.5rem] h-auto"
+          alt="american-express"
+        />
+      </div>
+      <div class="flex items-center justify-center gap-2">
+        <span>{{ 'deliver' | translate }}</span>
+        <img
+          src="assets/images/get-apple-store.png"
+          class="w-[3.125rem] h-auto"
+          alt="download-apple"
+        />
+
+        <img
+          src="assets/images/get-google-play.png"
+          class="w-[3.4375rem] h-auto"
+          alt="download-google"
+        />
+      </div>
+    </div>
+    <div class="w-full h-[.0625rem] my-5 bg-gray-300"></div>
+  </div>
+  <span class="block text-sm text-gray-500 text-body text-center font-semibold"
+    >© 2025 <a class="hover:underline">FreshCart™</a>. All Rights Reserved.</span
+  >
+</footer>

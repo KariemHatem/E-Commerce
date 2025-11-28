@@ -1,0 +1,44 @@
+<!-- Header -->
+<app-home-header></app-home-header>
+<!-- Slider -->
+<div id="gallery" class="relative w-full my-5" data-carousel="slide">
+  <!-- Wrapper -->
+  <div class="relative h-[450px] overflow-hidden rounded-2xl shadow-xl bg-gray-100">
+    @for (prod of allProducts; track $index) {
+    <div class="hidden duration-700 ease-out transform" data-carousel-item>
+      <!-- Image -->
+      <img
+        [src]="prod.imageCover"
+        loading="eager"
+        fetchpriority="high"
+        decode="async"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        alt="Product"
+      />
+
+      <!-- Dark Fade Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+      ></div>
+
+      <!-- Product Caption -->
+      <div class="absolute bottom-6 left-6 text-white">
+        <h3 class="text-2xl font-semibold drop-shadow-md">
+          {{ prod.title }}
+        </h3>
+        <p class="text-sm opacity-90">Starting from {{ prod.price | currency : ' EGP ' }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+<!-- Proudcts -->
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 p-4"
+>
+  <!-- PRODUCT CARD -->
+  @for( product of allProducts; track $index){
+  <app-card [cardProduct]="product"></app-card>
+  }
+</div>

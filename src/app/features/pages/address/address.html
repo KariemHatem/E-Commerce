@@ -1,0 +1,59 @@
+<div class="flex flex-col h-screen justify-center w-9/12 lg:w-5/12 mx-auto">
+  <app-custome-header [customeHeading]="addressHeadinig"></app-custome-header>
+  <form [formGroup]="addressForm" (ngSubmit)="addressSubmit()">
+    <!-- Inputs -->
+    <div class="mb-5">
+      <label class="labels">{{ 'detailsLabel' | translate }}</label>
+      <input
+        type="text"
+        name="details"
+        class="input-global"
+        placeholder="{{ 'detailsPlaceholder' | translate }}"
+        formControlName="details"
+      />
+      <!-- Errors -->
+      @if(addressForm.get("details")?.errors && (addressForm.get("details")?.touched ||
+      addressForm.get("details")?.dirty)){ @if(addressForm.get("details")?.getError("required")){
+      <p class="errors">{{ 'detailsRequired' | translate }}</p>
+      } }
+    </div>
+    <div class="mb-5">
+      <label class="labels">{{ 'phoneLabel' | translate }}</label>
+      <input
+        type="tel"
+        name="phone"
+        class="input-global"
+        placeholder="{{ 'phonePlaceholder' | translate }}"
+        formControlName="phone"
+      />
+      <!-- Errors -->
+      @if(addressForm.get("phone")?.errors && (addressForm.get("phone")?.touched ||
+      addressForm.get("phone")?.dirty)){ @if(addressForm.get("phone")?.getError("required")){
+      <p class="errors">{{ 'phoneRequired' | translate }}</p>
+      } }
+    </div>
+    <div class="mb-5">
+      <label class="labels">{{ 'cityLabel' | translate }}</label>
+      <input
+        type="text"
+        name="city"
+        class="input-global"
+        placeholder="{{ 'cityPlaceholder' | translate }}"
+        formControlName="city"
+      />
+      <!-- Errors -->
+      @if(addressForm.get("city")?.errors && (addressForm.get("city")?.touched ||
+      addressForm.get("details")?.dirty)){ @if(addressForm.get("city")?.getError("required")){
+      <p class="errors">{{ 'cityRequired' | translate }}</p>
+      } }
+    </div>
+
+    <button
+      type="submit"
+      class="btn-global disabled:cursor-not-allowed disabled:opacity-50"
+      [disabled]="!addressForm.valid"
+    >
+      {{ 'checkoutButton' | translate }}
+    </button>
+  </form>
+</div>
