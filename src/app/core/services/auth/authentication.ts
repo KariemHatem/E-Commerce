@@ -31,7 +31,13 @@ export class Authentication {
   }
   // Decode User Data from Token
   saveData() {
-    this.userDtata.next(jwtDecode(JSON.stringify(localStorage.getItem('userToken'))));
+    const token = localStorage.getItem('userToken');
+    if (token) {
+        const decoded = jwtDecode(token);
+        this.userDtata.next(decoded);
+    } else {
+      this.userDtata.next(null);
+    }
   }
 
   // Control Acces With Guard
