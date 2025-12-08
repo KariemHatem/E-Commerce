@@ -5,6 +5,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'address/:cartId', renderMode: RenderMode.Server },
   {
     path: '**',
-    renderMode: RenderMode.Client,
+    renderMode: RenderMode.Server,
   },
 ];
