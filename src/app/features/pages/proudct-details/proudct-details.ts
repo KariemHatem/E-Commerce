@@ -26,7 +26,6 @@ export class ProudctDetails {
         next: (resp: any) => {
           this.specifecProduct = resp.data;
           this.cdr.detectChanges();
-          console.log(this.specifecProduct);
           if ((window as any).Flowbite) {
             (window as any).Flowbite.init();
           }

@@ -27,8 +27,9 @@ export class Home {
 
   getAllProductsHome() {
     this.subscribtion = this.products.getAllProducts().subscribe({
-      next: (res: any) => {
-        this.allProducts = res.data;
+      next: (res) => {
+        this.allProducts = res;
+        console.log(this.allProducts);
         this.cdr.detectChanges();
         if ((window as any).Flowbite) {
           (window as any).Flowbite.init();
