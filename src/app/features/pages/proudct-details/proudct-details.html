@@ -7,12 +7,14 @@
     />
     <div class="flex flex-col justify-between md:p-4 leading-normal">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">
-        {{ specifecProduct.title }}
+        {{ 'PRODUCTS.' + specifecProduct.title | translate }}
       </h5>
       <p class="mb-4 text-body">
         {{ specifecProduct.description }}
       </p>
-      <h5 class="text-main-color text-sm font-semibold">{{ specifecProduct.category.name }}</h5>
+      <h5 class="text-main-color text-sm font-semibold">
+        {{ 'CATEGORIES.' + specifecProduct.category.name | translate }}
+      </h5>
       <div class="flex items-center justify-between mt-1 mb-3">
         <span class="text-base font-bold text-gray-900">{{
           specifecProduct.price | currency : ' EGP '
@@ -24,7 +26,7 @@
         </div>
       </div>
       <div class="flex items-center justify-center">
-        <button class="btn-global cursor-pointer w-full">Add to cart</button>
+        <button class="btn-global cursor-pointer w-full">{{ 'addToChart' | translate }}</button>
       </div>
     </div>
   </div>

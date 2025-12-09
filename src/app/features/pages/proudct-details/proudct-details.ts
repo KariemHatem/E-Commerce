@@ -4,10 +4,11 @@ import { Product } from '../../../core/services/e-comm/product/product';
 import { Product as pInterface } from '../../../shared/interfaces/products';
 import { CurrencyPipe } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-proudct-details',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, TranslatePipe],
   templateUrl: './proudct-details.html',
   styleUrl: './proudct-details.scss',
 })

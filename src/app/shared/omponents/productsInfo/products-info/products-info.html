@@ -9,12 +9,12 @@
 
   <!-- Brand -->
   <h5 class="text-main-color text-sm font-semibold my-2">
-    {{ cardProductInfo()?.category?.name }}
+    {{ 'CATEGORIES.' + cardProductInfo()?.category?.name | translate }}
   </h5>
 
   <!-- Title -->
   <p class="text-gray-800 text-sm font-semibold leading-tight line-clamp-2">
-    {{ cardProductInfo()?.title }}
+    {{ 'PRODUCTS.' + cardProductInfo()?.title | translate }}
   </p>
 
   <div class="flex items-center mt-2">

@@ -3,6 +3,7 @@
   "cart": "Cart",
   "proudcts": "Proudcts",
   "categories": "Categories",
+  "addToChart": "Add to Chart",
   "brands": "Brands",
   "login": "Login",
   "signup": "Signup",
@@ -51,5 +52,51 @@
   "cityLabel": "City",
   "cityPlaceholder": "City",
   "cityRequired": "* City is required",
-  "checkoutButton": "Check Out"
+  "checkoutButton": "Check Out",
+
+  "PRODUCTS": {
+    "Woman Shawl": "Woman Shawl",
+    "Woman Bordeaux Long Sleeve Blouse BORDEAUX": "Woman Bordeaux Long Sleeve Blouse BORDEAUX",
+    "Woman Brown Long Sleeve Tunic LT.CAMEL": "Woman Brown Long Sleeve Tunic LT.CAMEL",
+    "Woman Standart Fit Knitted Cardigan": "Woman Standard Fit Knitted Cardigan",
+    "Relaxed Fit Knitted Joggers Lilac": "Relaxed Fit Knitted Joggers Lilac",
+    "Woman Socks": "Woman Socks",
+    "Woman Karma Socks Multicolour": "Woman Karma Socks Multicolour",
+    "Logo T-Shirt Green": "Logo T-Shirt Green",
+    "Orca Leather Boots Anthracite": "Orca Leather Boots Anthracite",
+    "Softride Enzo NXT CASTLEROCK-High Risk R": "Softride Enzo NXT CASTLEROCK-High Risk Red",
+    "ESS Big Logo Hoodie TR Puma Black": "ESS Big Logo Hoodie TR Puma Black",
+    "Sportswear Club Graphic Hoodie Blue": "Sportswear Club Graphic Hoodie Blue",
+    "NSW Everyday Essentials No-Show Socks (Pack of 3) White/Black": "NSW Everyday Essentials No-Show Socks (Pack of 3) White/Black",
+    "Court Tennis Track Pants Black": "Court Tennis Track Pants Black",
+    "React Live Sneakers Black/White-Dk Smoke Grey": "React Live Sneakers Black/White-Dk Smoke Grey",
+    "Essentials Embroidered Linear Logo T-Shirt Navy": "Essentials Embroidered Linear Logo T-Shirt Navy",
+    "Salah Track Top": "Salah Track Top",
+    "Adicolor Classics Beckenbauer Primeblue Track Top": "Adicolor Classics Beckenbauer Primeblue Track Top",
+    "Duramo 10 Running Shoes": "Duramo 10 Running Shoes",
+    "Hoops 3.0 Low Classic Vintage Shoes": "Hoops 3.0 Low Classic Vintage Shoes",
+    "Galaxy 6 Running Shoes": "Galaxy 6 Running Shoes",
+    "Slim Fit Long Sleeve Dobby Men's Shirt": "Slim Fit Long Sleeve Dobby Men's Shirt",
+    "Crew Neck Long Sleeve Men's Knitwear Sweater": "Crew Neck Long Sleeve Men's Knitwear Sweater",
+    "Crew Neck Long Sleeve Striped Men's Tricot Sweater": "Crew Neck Long Sleeve Striped Men's Tricot Sweater",
+    "Crew Neck Long Sleeve Men's Tricot Sweater with Color Block": "Crew Neck Long Sleeve Men's Tricot Sweater with Color Block",
+    "Polo Collar Short Sleeve Color Block Men's Knitwear Sweater": "Polo Collar Short Sleeve Color Block Men's Knitwear Sweater",
+    "Standard Pattern Plaid Fleece Men's Pajamas Set": "Standard Pattern Plaid Fleece Men's Pajamas Set",
+    "Slim Fit Stand Collar Men's Leather Look Coat": "Slim Fit Stand Collar Men's Leather Look Coat",
+    "Archer VR300 AC1200 Wireless VDSL/ADSL Modem Router Black": "Archer VR300 AC1200 Wireless Modem Router Black",
+    "PIXMA G3420 Multi-Function Inkjet Printer Black": "PIXMA G3420 Multi-Function Inkjet Printer Black",
+    "EOS M50 Mark II Mirrorless Digital Camera With 15-45mm Lens Black": "EOS M50 Mark II Mirrorless Digital Camera With 15-45mm Lens Black",
+    "PS5 DualSense Charging Station": "PS5 DualSense Charging Station",
+    "Galaxy Buds 2 Graphite": "Galaxy Buds 2 Graphite",
+    "WH-CH510 Wireless On-Ear Bluetooth Headphones Black": "WH-CH510 Wireless On-Ear Bluetooth Headphones Black",
+    "Victus 16-D1016Ne Laptop With 16-Inch Display Rtx3050 Ti Graphics Ceramic White": "Victus 16-D1016Ne Laptop 16-Inch RTX3050 Ti Ceramic White"
+  },
+  "CATEGORIES": {
+    "Women's Fashion": "Women's Fashion",
+    "Men's Fashion": "Men's Fashion",
+    "Electronics": "Electronics"
+  },
+  "products": {
+    "startingFrom": "Starting from"
+  }
 }

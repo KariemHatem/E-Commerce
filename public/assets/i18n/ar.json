@@ -3,6 +3,7 @@
   "Cart": "عربة التسوق",
   "Products": "المنتجات",
   "Categories": "الفئات",
+  "addToChart": "أضف إلى العربة",
   "Brands": "العلامات التجارية",
   "login": "تسجيل الدخول",
   "signup": "إنشاء حساب",
@@ -51,5 +52,52 @@
   "cityLabel": "المدينة",
   "cityPlaceholder": "المدينة",
   "cityRequired": "* المدينة مطلوبة",
-  "checkoutButton": "الدفع"
+  "checkoutButton": "الدفع",
+
+  "PRODUCTS": {
+    "Woman Shawl": "شال نسائي",
+    "Woman Bordeaux Long Sleeve Blouse BORDEAUX": "بلوزة نسائية بورغندي بأكمام طويلة",
+    "Woman Brown Long Sleeve Tunic LT.CAMEL": "تونك نسائي بني بأكمام طويلة لون جملي فاتح",
+    "Woman Standart Fit Knitted Cardigan": "كارديجان محبوك بقصة عادية للنساء",
+    "Relaxed Fit Knitted Joggers Lilac": "بنطال رياضي محبوك بقصة مريحة باللون البنفسجي الفاتح",
+    "Woman Socks": "جوارب نسائية",
+    "Woman Karma Socks Multicolour": "جوارب كارما نسائية متعددة الألوان",
+    "Logo T-Shirt Green": "تيشيرت بشعار - أخضر",
+    "Orca Leather Boots Anthracite": "حذاء أوركا جلدي - أنثراسايت",
+    "Softride Enzo NXT CASTLEROCK-High Risk R": "حذاء سوفت رايد إنزو NXT - كاسل روك/أحمر",
+    "ESS Big Logo Hoodie TR Puma Black": "هودي ESS بشعار كبير - أسود بوما",
+    "Sportswear Club Graphic Hoodie Blue": "هودي سبورتس وير كلوب - أزرق",
+    "NSW Everyday Essentials No-Show Socks (Pack of 3) White/Black": "جوارب غير مرئية (٣ قطع) - أبيض/أسود",
+    "Court Tennis Track Pants Black": "بنطال تراك للتنس - أسود",
+    "React Live Sneakers Black/White-Dk Smoke Grey": "حذاء ريأكت لايف - أسود/أبيض/رمادي دخاني",
+    "Essentials Embroidered Linear Logo T-Shirt Navy": "تيشيرت بشعار مطرز خطي - كحلي",
+    "Salah Track Top": "جاكيت تراك محمد صلاح",
+    "Adicolor Classics Beckenbauer Primeblue Track Top": "جاكيت أديكولور بيكنباور برايم بلو",
+    "Duramo 10 Running Shoes": "حذاء الجري دورامو 10",
+    "Hoops 3.0 Low Classic Vintage Shoes": "حذاء هووبس 3.0 لو كلاسيك فينتاج",
+    "Galaxy 6 Running Shoes": "حذاء الجري جالاكسي 6",
+    "Slim Fit Long Sleeve Dobby Men's Shirt": "قميص رجالي ضيق دوبّي بأكمام طويلة",
+    "Crew Neck Long Sleeve Men's Knitwear Sweater": "سويتر رجالي محبوك برقبة دائرية",
+    "Crew Neck Long Sleeve Striped Men's Tricot Sweater": "سويتر رجالي محبوك مخطط بأكمام طويلة",
+    "Crew Neck Long Sleeve Men's Tricot Sweater with Color Block": "سويتر رجالي محبوك بألوان متداخلة",
+    "Polo Collar Short Sleeve Color Block Men's Knitwear Sweater": "سويتر رجالي بياقة بولو وألوان متداخلة",
+    "Standard Pattern Plaid Fleece Men's Pajamas Set": "طقم بيجامة رجالي فليس بنقشة مربعات",
+    "Slim Fit Stand Collar Men's Leather Look Coat": "معطف رجالي ضيق بياقة واقفة بإطلالة جلد",
+    "Archer VR300 AC1200 Wireless VDSL/ADSL Modem Router Black": "راوتر Archer VR300 AC1200 لاسلكي - أسود",
+    "PIXMA G3420 Multi-Function Inkjet Printer Black": "طابعة PIXMA G3420 متعددة الوظائف - أسود",
+    "EOS M50 Mark II Mirrorless Digital Camera With 15-45mm Lens Black": "كاميرا EOS M50 Mark II بدون مرآة + عدسة 15-45 مم - أسود",
+    "PS5 DualSense Charging Station": "قاعدة شحن يد PS5 DualSense",
+    "Galaxy Buds 2 Graphite": "سماعات جالاكسي بودز 2 - جرافيت",
+    "WH-CH510 Wireless On-Ear Bluetooth Headphones Black": "سماعات سوني WH-CH510 لاسلكية - أسود",
+    "Victus 16-D1016Ne Laptop With 16-Inch Display Rtx3050 Ti Graphics Ceramic White": "لاب توب Victus 16-D1016Ne بشاشة 16 بوصة RTX3050 Ti – أبيض سيراميكي"
+  },
+
+  "CATEGORIES": {
+    "Women's Fashion": "موضة نسائية",
+    "Men's Fashion": "موضة رجالية",
+    "Electronics": "إلكترونيات"
+  },
+  "products": {
+    "startingFrom": "تبدأ من"
+  }
 }

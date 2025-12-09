@@ -5,10 +5,11 @@ import { Product as interfaceProduct } from '../../../shared/interfaces/products
 import { HomeHeader } from './home-header/home-header';
 import { CurrencyPipe } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
-  imports: [Card, HomeHeader, CurrencyPipe],
+  imports: [Card, HomeHeader, CurrencyPipe, TranslatePipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -29,7 +30,6 @@ export class Home {
     this.subscribtion = this.products.getAllProducts().subscribe({
       next: (res) => {
         this.allProducts = res;
-        console.log(this.allProducts);
         this.cdr.detectChanges();
         if ((window as any).Flowbite) {
           (window as any).Flowbite.init();

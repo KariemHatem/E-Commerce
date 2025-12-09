@@ -24,9 +24,11 @@
       <!-- Product Caption -->
       <div class="absolute bottom-6 left-6 text-white">
         <h3 class="text-2xl font-semibold drop-shadow-md">
-          {{ prod.title }}
+          {{ 'PRODUCTS.' + prod.title | translate }}
         </h3>
-        <p class="text-sm opacity-90">Starting from {{ prod.price | currency : ' EGP ' }}</p>
+        <p class="text-sm opacity-90">
+          {{ 'products.startingFrom' | translate }} {{ prod.price | currency : ' EGP ' }}
+        </p>
       </div>
     </div>
     }
