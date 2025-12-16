@@ -97,7 +97,7 @@
       class="btn-global disabled:cursor-not-allowed disabled:opacity-50"
       [disabled]="!registerForm.valid"
     >
-      {{ 'registerButton' | translate }} @if(isLoading){
+      {{ 'registerButton' | translate }} @if(isLoading()){
       <i class="fa-solid fa-spinner fa-spin"></i>
       }
     </button>

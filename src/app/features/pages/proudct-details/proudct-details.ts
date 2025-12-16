@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../core/services/e-comm/product/product';
 import { Product as pInterface } from '../../../shared/interfaces/products';
@@ -16,7 +16,7 @@ export class ProudctDetails {
   private activatedRoute = inject(ActivatedRoute);
   private product = inject(Product);
   private cdr = inject(ChangeDetectorRef);
-  specifecProduct!: pInterface;
+  specifecProduct = signal<pInterface | null>(null);
   subscribtion!: Subscription;
   pId: string = '';
 
@@ -25,7 +25,7 @@ export class ProudctDetails {
       this.pId = param.get('id') || '';
       this.subscribtion = this.product.getSpecProducts(this.pId).subscribe({
         next: (resp: any) => {
-          this.specifecProduct = resp.data;
+          this.specifecProduct.set(resp.data);
           this.cdr.detectChanges();
           if ((window as any).Flowbite) {
             (window as any).Flowbite.init();

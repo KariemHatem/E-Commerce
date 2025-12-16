@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { Product } from '../../../core/services/e-comm/product/product';
 import { Product as interfaceProduct } from '../../../shared/interfaces/products';
 import { ChangeDetectorRef } from '@angular/core';
@@ -13,8 +13,8 @@ import { ProductsInfo } from '../../../shared/omponents/productsInfo/products-in
 })
 export class Categories {
   private products = inject(Product);
-  // allProducts
-  allProducts: interfaceProduct[] = [];
+  // allProducts =======> WritableSignal
+  allProducts: WritableSignal<interfaceProduct[]> = signal<interfaceProduct[]>([]);
 
   subscribtion!: Subscription;
   private cdr = inject(ChangeDetectorRef);
@@ -25,7 +25,7 @@ export class Categories {
   getAllProductsHome() {
     this.subscribtion = this.products.getAllProducts().subscribe({
       next: (res) => {
-        this.allProducts = res;
+        this.allProducts.set(res);
         this.cdr.detectChanges();
         if ((window as any).Flowbite) {
           (window as any).Flowbite.init();

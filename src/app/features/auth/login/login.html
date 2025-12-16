@@ -47,7 +47,7 @@
       class="btn-global disabled:cursor-not-allowed disabled:opacity-50"
       [disabled]="!loginForm.valid"
     >
-      {{ 'login' | translate }} @if(isLoading){
+      {{ 'login' | translate }} @if(isLoading()){
       <i class="fa-solid fa-spinner fa-spin"></i>
       }
     </button>

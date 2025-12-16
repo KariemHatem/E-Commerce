@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CustomeHeader } from '../custome-header/custome-header';
 import { FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -19,7 +19,7 @@ export class Login {
 
   errorMessage: string = '';
 
-  isLoading: boolean = false;
+  isLoading = signal<boolean>(false);
 
   // Custome Header Data
   loginHeadiing: string = 'Login to Your Account';
@@ -40,7 +40,7 @@ export class Login {
 
   loginSubmit() {
     if (this.loginForm.valid) {
-      this.isLoading = true;
+      this.isLoading.set(true);
       this.authentication.loginData(this.loginForm.value).subscribe({
         next: (res: any) => {
           if (res.message === 'success') {
@@ -51,12 +51,12 @@ export class Login {
             // Navigate to Home Page
             this.router.navigateByUrl('/home');
           }
-          this.isLoading = false;
+          this.isLoading.set(false);
         },
         error: (err) => {
           this.errorMessage = err.error.message;
           console.log(err);
-          this.isLoading = false;
+          this.isLoading.set(false);
         },
       });
     }

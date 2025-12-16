@@ -4,7 +4,7 @@
 <div id="gallery" class="relative w-full my-5" data-carousel="slide">
   <!-- Wrapper -->
   <div class="relative h-[450px] overflow-hidden rounded-2xl shadow-xl bg-gray-100">
-    @for (prod of allProducts; track $index) {
+    @for (prod of allProducts(); track $index) {
     <div class="hidden duration-700 ease-out transform" data-carousel-item>
       <!-- Image -->
       <img
@@ -40,7 +40,7 @@
   class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 p-4"
 >
   <!-- PRODUCT CARD -->
-  @for( product of allProducts; track $index){
+  @for( product of allProducts(); track $index){
   <app-card [cardProduct]="product"></app-card>
   }
 </div>

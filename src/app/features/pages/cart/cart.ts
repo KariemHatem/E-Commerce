@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal, WritableSignal } from '@angular/core';
 import { Cart as pCart } from '../../../core/services/e-comm/cart/cart';
 import { CartProudct } from '../../../shared/interfaces/cart-proudct';
 import { FlowbiteInit } from '../../../shared/directives/flowbite-init';
@@ -17,9 +17,9 @@ export class Cart {
   // Cart Service
   private cart = inject(pCart);
   // Cart Holder
-  cartData: CartProudct[] = [];
+  cartData: WritableSignal<CartProudct[]> = signal<CartProudct[]>([]);
   // Cart Total Price
-  totalPrice: number = 0;
+  totalPrice = signal<number>(0);
   subscribtion!: Subscription;
   cartId: string = '';
   private cdr = inject(ChangeDetectorRef);
@@ -32,8 +32,8 @@ export class Cart {
   getCart() {
     this.subscribtion = this.cart.getUserCartApi().subscribe({
       next: (resp: any) => {
-        this.cartData = resp.data.products;
-        this.totalPrice = resp.data.totalCartPrice;
+        this.cartData.set(resp.data.products);
+        this.totalPrice.set(resp.data.totalCartPrice);
         this.cartId = resp.cartId;
         this.cdr.detectChanges();
 

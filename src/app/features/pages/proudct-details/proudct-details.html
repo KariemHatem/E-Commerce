@@ -1,28 +1,28 @@
 <div appFlowbiteInit>
   <div class="flex flex-col justify-center items-center md:flex-row mx-auto w-9/12 my-8">
     <img
-      [src]="specifecProduct.imageCover"
+      [src]="specifecProduct()?.imageCover"
       class="object-cover w-full rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0"
       alt="Specifiec Product"
     />
     <div class="flex flex-col justify-between md:p-4 leading-normal">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">
-        {{ 'PRODUCTS.' + specifecProduct.title | translate }}
+        {{ 'PRODUCTS.' + specifecProduct()?.title | translate }}
       </h5>
       <p class="mb-4 text-body">
-        {{ specifecProduct.description }}
+        {{ specifecProduct()?.description }}
       </p>
       <h5 class="text-main-color text-sm font-semibold">
-        {{ 'CATEGORIES.' + specifecProduct.category.name | translate }}
+        {{ 'CATEGORIES.' + specifecProduct()?.category?.name | translate }}
       </h5>
       <div class="flex items-center justify-between mt-1 mb-3">
         <span class="text-base font-bold text-gray-900">{{
-          specifecProduct.price | currency : ' EGP '
+          specifecProduct()?.price | currency : ' EGP '
         }}</span>
 
         <div class="flex items-center">
           <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
-          <span class="text-gray-500 text-xs ml-1">{{ specifecProduct.ratingsAverage }}</span>
+          <span class="text-gray-500 text-xs ml-1">{{ specifecProduct()?.ratingsAverage }}</span>
         </div>
       </div>
       <div class="flex items-center justify-center">

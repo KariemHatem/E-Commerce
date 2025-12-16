@@ -3,7 +3,7 @@
   <!-- Table Title -->
   <div class="tabel-title text-center my-4 font-semibold">
     <h1 class="text-xl">{{ 'cartTitle' | translate }}</h1>
-    <p class="text-main-color mt-2">{{ 'totlalPrice' | translate }}: {{ totalPrice }}</p>
+    <p class="text-main-color mt-2">{{ 'totlalPrice' | translate }}: {{ totalPrice() }}</p>
   </div>
   <!-- Clear Cart  -->
   <div class="flex items-center justify-between mb-4">
@@ -40,7 +40,7 @@
       <!-- Table Body -->
       <tbody>
         <!-- Loop through cart items -->
-        @for (productCart of cartData; track $index) {
+        @for (productCart of cartData(); track $index) {
         <tr class="border-b border-default">
           <!-- Product Image -->
           <td class="p-4">

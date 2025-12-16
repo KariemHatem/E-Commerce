@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CustomeHeader } from '../custome-header/custome-header';
 import {
   AbstractControl,
@@ -25,7 +25,7 @@ export class Register {
 
   errorMessage: string = '';
 
-  isLoading: boolean = false;
+  isLoading = signal<boolean>(false);
 
   // Custome Header Data
   registerHeading: string = 'Create Your Account';
@@ -76,18 +76,18 @@ export class Register {
   // Form Submit Handeler
   registerSubmit() {
     if (this.registerForm.valid) {
-      this.isLoading = true;
+      this.isLoading.set(true);
       this.authentication.registerData(this.registerForm.value).subscribe({
         next: (res: any) => {
           if (res.message === 'success') {
             this.router.parseUrl('/login');
           }
 
-          this.isLoading = false;
+          this.isLoading.set(false);
         },
         error: (err) => {
           this.errorMessage = err.error.message;
-          this.isLoading = false;
+          this.isLoading.set(false);
         },
       });
     }
