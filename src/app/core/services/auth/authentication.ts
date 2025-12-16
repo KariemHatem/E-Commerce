@@ -23,7 +23,7 @@ export class Authentication {
   httpCall = inject(HttpClient);
   // Send Register Data to API
   registerData(data: object) {
-    return this.httpCall.post(`${environment.baseUrl}api/v1/auth/signup`, data);
+    return this.httpCall.post(`${environment.baseUrl}/api/v1/auth/signup`, data);
   }
   // Send Login Data to API
   loginData(data: object) {
